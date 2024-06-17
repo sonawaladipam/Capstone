@@ -6,7 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  background-image: url(./comp/assets/background.jpg);
+  /*background-image: url(./comp/assets/background.jpg);
+  */
 }
 
 code {

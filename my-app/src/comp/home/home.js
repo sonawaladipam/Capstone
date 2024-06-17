@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../header/header';
 
 function Home() {
   return (
     <div>
-      <h1>Welcome to Home Page</h1>
+      <Header/>
       <Link to="/">Go to Login/Signup</Link>
     </div>
   );

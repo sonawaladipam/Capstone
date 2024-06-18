@@ -8,6 +8,10 @@ body {
   height: 100vh;
   /*background-image: url(./comp/assets/background.jpg);
   */
+  
+}
+.logo img{
+  margin-right: 200px;
 }
 
 code {

@@ -1,0 +1,14 @@
+.container {
+    padding: 20px;
+  }
+  
+  .appointments {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .today, .upcoming {
+    flex: 1;
+    margin-right: 20px; 
+  }
+  

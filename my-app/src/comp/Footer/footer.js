@@ -5,7 +5,7 @@ import '../Footer/footer.css'; // Optional: Create a CSS file to style your foot
 const Footer = () => {
     return (
         <footer className="footer">
-            <div className="container">
+            <div className="c1">
                 <p>&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
                 <p>
                     <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a>

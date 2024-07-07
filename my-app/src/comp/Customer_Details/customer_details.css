@@ -1,75 +1,3 @@
- /* .customer-container {
-    width: 200px;
-    background-color: #c0c0c0;
-    padding: 20px;
-  }
-  
-  .customer-header {
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .customer-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .customer-item {
-    background-color: #e0e0e0;
-    padding: 10px;
-    text-align: center;
-  } */
-
-/* 
-   .customer-container {
-    width: 600px;
-    background-color: #c0c0c0;
-    padding: 20px;
-    margin: 0 auto;
-  }
-  
-  .customer-header {
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .customer-content {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .customer-list {
-    flex: 1;
-  }
-  
-  .customer-item {
-    background-color: #e0e0e0;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .customer-item:hover {
-    background-color: #d0d0d0;
-  }
-  
-  .customer-details {
-    flex: 1;
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .customer-details h3 {
-    margin-top: 0;
-  }
-   */
-
    body, html {
     margin: 0;
     padding: 0;
@@ -117,6 +45,23 @@
     background-color: #d0d0d0;
   }
   
+  .add-customer-button {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    }
+  
+  .add-customer-button:hover {
+    background-color: #45a049;
+  }
+  
   .customer-details {
     flex: 1;
     background-color: #ffffff;
@@ -127,5 +72,46 @@
   
   .customer-details h3 {
     margin-top: 0;
+  }
+  
+  .customer-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .customer-form h3 {
+    margin-bottom: 15px;
+  }
+  
+  .customer-form div {
+    margin-bottom: 10px;
+  }
+  
+  .customer-form label {
+    margin-right: 10px;
+  }
+  
+  .customer-form input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .customer-form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .customer-form button:hover {
+    background-color: #45a049;
   }
   

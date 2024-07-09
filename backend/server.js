@@ -97,7 +97,9 @@ const jwt = require('jsonwebtoken');
 const User = require('./models/user'); // Assuming the user model is correctly defined
 //const authRoutes = require('./routes/auth');
 const register = require('./routes/register');
-const login = require('./routes/login')
+const login = require('./routes/login');
+const customerRoutes = require('./routes/customers'); // Import customer routes
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -127,6 +129,7 @@ app.use((req, res, next) => {
 // app.use('/api', authRoutes);
 app.use('/api/register', require('./routes/register'));
 app.use('/api/login', require('./routes/login'));
+app.use('/api/customers', customerRoutes);
 // app.use('/api/login', login);
 
 app.listen(port, () => {

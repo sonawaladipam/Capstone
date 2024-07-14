@@ -5,7 +5,8 @@ import email_icon from '../assets/email.png';
 import pass_icon from '../assets/pass.png';
 
 const LoginSignup = () => {
-  const [action, setAction] = useState("Sign up");
+  //const [action, setAction] = useState("Sign up");
+  const [action, setAction] = useState("Login");
   const [formData, setFormData] = useState({
     username: '',
     email: '',

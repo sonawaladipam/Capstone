@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../header/header';
-import Footer from '../Footer/footer';
+import Layout from '../layout/layout';
 
 function Home() {
   return (
     <div>
       <Header/>
-      <Footer/>
+      <Layout/>
     </div>
   );
 }

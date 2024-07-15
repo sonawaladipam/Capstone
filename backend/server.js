@@ -99,6 +99,7 @@ const User = require('./models/user'); // Assuming the user model is correctly d
 const register = require('./routes/register');
 const login = require('./routes/login');
 const customerRoutes = require('./routes/customers'); // Import customer routes
+const appointmentRoutes = require('./routes/appoinments');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -112,7 +113,7 @@ const mongoUri = "mongodb+srv://malharmehta7:Malhar3012002@cluster1.amivt4d.mong
 console.log('MongoDB URI:', mongoUri);
 
 // Connect to MongoDB
-mongoose.connect(mongoUri)
+mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => {
     console.error('MongoDB connection error:', err);
@@ -131,6 +132,7 @@ app.use('/api/register', require('./routes/register'));
 app.use('/api/login', require('./routes/login'));
 app.use('/api/customers', customerRoutes);
 // app.use('/api/login', login);
+app.use('/api/appointments', appointmentRoutes);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

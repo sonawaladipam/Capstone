@@ -49,8 +49,10 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../header/header'; // Adjust path as necessary
 import Footer from '../Footer/footer'; // Adjust path as necessary
+import Layout from '../../comp/layout/layout'; // Adjust path as necessary
 import '../Appoinment_Check/appoinment_check.css'
 import axios from 'axios';
+import { FaClock, FaUser } from 'react-icons/fa';
 
 const AppointmentCheck = () => {
   // Sample data for demonstration
@@ -113,21 +115,69 @@ const AppointmentCheck = () => {
     setShowUpcomingMore(true);
   };
 
+  // return (
+  //   <div>
+  //     <Header />
+  //     <Layout/>
+  //     <div className="container">
+  //       <section>
+  //         <h2>Today's Appointments</h2>
+  //         <ul>
+  //           {/* {todaysAppointments.slice(0, showTodayMore ? todaysAppointments.length : 2).map(appointment => (
+  //             <li key={appointment.id}>
+  //               {appointment.time} - {appointment.patient}
+  //             </li>
+  //           ))} */}
+  //           {todaysAppointments.slice(0, showTodayMore ? todaysAppointments.length : 2).map(appointment => (
+  //             <li key={appointment._id}>
+  //               {new Date(appointment.AppointmentTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - {appointment.name}
+  //             </li>
+  //           ))}
+  //         </ul>
+  //         {!showTodayMore && (
+  //           <button onClick={handleShowMoreToday}>See More</button>
+  //         )}
+  //       </section>
+  //       <section>
+  //         <h2>Upcoming Appointments</h2>
+  //         <ul>
+  //           {/* {upcomingAppointments.slice(0, showUpcomingMore ? upcomingAppointments.length : 2).map(appointment => (
+  //             <li key={appointment.id}>
+  //               {appointment.time} - {appointment.patient}
+  //             </li>
+  //           ))} */}
+  //           {upcomingAppointments.slice(0, showUpcomingMore ? upcomingAppointments.length : 2).map(appointment => (
+  //             <li key={appointment._id}>
+  //               {new Date(appointment.AppointmentTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - {appointment.name}
+  //             </li>
+  //           ))}
+  //         </ul>
+  //         {!showUpcomingMore && (
+  //           <button onClick={handleShowMoreUpcoming}>See More</button>
+  //         )}
+  //       </section>
+  //     </div>
+  //     <Footer />
+  //   </div>
+  // );
   return (
     <div>
       <Header />
-      <div className="container">
+      <Layout />
+      <div className="c2">
         <section>
           <h2>Today's Appointments</h2>
           <ul>
-            {/* {todaysAppointments.slice(0, showTodayMore ? todaysAppointments.length : 2).map(appointment => (
-              <li key={appointment.id}>
-                {appointment.time} - {appointment.patient}
-              </li>
-            ))} */}
             {todaysAppointments.slice(0, showTodayMore ? todaysAppointments.length : 2).map(appointment => (
               <li key={appointment._id}>
-                {new Date(appointment.AppointmentTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - {appointment.name}
+                <span className="time">
+                  <FaClock className="icon" />
+                  {new Date(appointment.AppointmentTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                </span>
+                <span className="name">
+                  <FaUser className="icon" />
+                  {appointment.name}
+                </span>
               </li>
             ))}
           </ul>
@@ -138,14 +188,16 @@ const AppointmentCheck = () => {
         <section>
           <h2>Upcoming Appointments</h2>
           <ul>
-            {/* {upcomingAppointments.slice(0, showUpcomingMore ? upcomingAppointments.length : 2).map(appointment => (
-              <li key={appointment.id}>
-                {appointment.time} - {appointment.patient}
-              </li>
-            ))} */}
             {upcomingAppointments.slice(0, showUpcomingMore ? upcomingAppointments.length : 2).map(appointment => (
               <li key={appointment._id}>
-                {new Date(appointment.AppointmentTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - {appointment.name}
+                <span className="time">
+                  <FaClock className="icon" />
+                  {new Date(appointment.AppointmentTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                </span>
+                <span className="name">
+                  <FaUser className="icon" />
+                  {appointment.name}
+                </span>
               </li>
             ))}
           </ul>

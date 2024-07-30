@@ -13,7 +13,7 @@ function Home() {
     options: {
       chart: {
         type: 'line',
-        height: 350
+        height: 250
       },
       title: {
         text: 'Revenue',

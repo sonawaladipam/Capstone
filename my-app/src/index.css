@@ -9,14 +9,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< Updated upstream
  min-height: 100%;
   display: flex;
   flex-direction: column; 
   box-sizing: inherit;
+=======
+  height: 100vh;
+  /* background-image: url(./comp/assets/background.jpg); */
+ 
+  
+>>>>>>> Stashed changes
 }
-.logo img{
-  margin-right: 200px;
-}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

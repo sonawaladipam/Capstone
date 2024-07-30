@@ -90,6 +90,7 @@
 //   console.log('Server running on port ${port}');
 // });
 const express = require('express');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
@@ -100,12 +101,25 @@ const register = require('./routes/register');
 const login = require('./routes/login');
 const customerRoutes = require('./routes/customers'); // Import customer routes
 const appointmentRoutes = require('./routes/appoinments');
+const nodemailer = require('nodemailer');
+const http = require("http");
+
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail', // you can use any email service
+  auth: {
+    user: 'expert.care99@gmail.com',
+    pass: 'zgop aotj pdfp jbmv'
+  }
+}); 
+
 
 // MongoDB URI
 // const mongoUri = "mongodb+srv://malharmehta7:Malhar3012002@cluster1.amivt4d.mongodb.net/userslogin";
@@ -126,6 +140,7 @@ app.use((req, res, next) => {
   next();
 });
 
+
 // Routes
 // app.use('/api', authRoutes);
 app.use('/api/register', require('./routes/register'));
@@ -133,6 +148,29 @@ app.use('/api/login', require('./routes/login'));
 app.use('/api/customers', customerRoutes);
 // app.use('/api/login', login);
 app.use('/api/appointments', appointmentRoutes);
+
+app.post('/send-reminder', (req, res) => {
+  console.log('Received request to send email:', req.body); // Add this line
+
+  const { email, subject, text } = req.body;
+
+  const mailOptions = {
+    from: 'expert.care99@gmail.com',
+    to: 'dipamdpm@gmail.com',
+    subject: 'Test email for capstone',
+    text: 'This is the 1st test email of capstone'
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Error sending email:', error); // Add this line
+      return res.status(500).send(error.toString());
+    }
+    console.log('Email sent:', info.response); // Add this line
+    res.status(200).send('Email sent: ' + info.response);
+  });
+});
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

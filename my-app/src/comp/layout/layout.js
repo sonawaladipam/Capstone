@@ -47,10 +47,10 @@ const Sidebar = () => {
             </div>
             <Link to="/home" className="sidebar-link">Home</Link>
             <Link to="/customer_details" className="sidebar-link">Customer Details</Link>
-            <Link to="/feedback_check" className="sidebar-link">Feedback Check</Link>
+            {/* <Link to="/feedback_check" className="sidebar-link">Feedback Check</Link> */}
             <Link to="/appoinment_check" className="sidebar-link">Appointment Check</Link>
             <Link to="/service_remainder" className="sidebar-link">Service Reminder</Link>
-            <Link to="/chat_box" className="sidebar-link">Chat Box</Link>
+            {/* <Link to="/chat_box" className="sidebar-link">Chat Box</Link> */}
             <Link to="/" className="sidebar-link">Log Out</Link>
         </nav>
     );

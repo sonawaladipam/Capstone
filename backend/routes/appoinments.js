@@ -17,22 +17,28 @@ router.get('/', async (req, res) => {
 // Get today's appointments
 router.get('/today', async (req, res) => {
   const startOfDay = new Date();
-  console.log('Date: ', startOfDay);
-  console.log('Timezome: ', startOfDay.getTimezoneOffset());
-  //startOfDay.setHours(0, 0, 0, 0);
-  startOfDay.setUTCHours(0, 0, 0, 0);
+  //const localstartDate = startOfDay.toLocaleString('en-CA', { timeZone: 'America/Toronto' });
+  console.log('startOfDay Date: ', startOfDay);
+  //console.log('Timezome: ', localstartDate.getTimezoneOffset());
+  startOfDay.setHours(0, 0, 0, 0);
+  //startOfDay.setUTCHours(0, 0, 0, 0);
   const endOfDay = new Date();
-  //endOfDay.setHours(23, 59, 59, 999);
-  endOfDay.setUTCHours(23, 59, 59, 999);
+  //const localendDate = endOfDay.toLocaleString('en-CA', { timeZone: 'America/Toronto' });
+  endOfDay.setHours(23, 59, 59, 999);
+  //endOfDay.setUTCHours(23, 59, 59, 999);
 
-  console.log('UTC Start of Day: ', startOfDay.toISOString());
-  console.log('UTC End of Day: ', endOfDay.toISOString());
+  const startOfDayUTC = new Date(startOfDay.toUTCString());
+  const endOfDayUTC = new Date(endOfDay.toUTCString());
+
+  console.log('UTC Start of Day: ', startOfDayUTC.toISOString());
+  console.log('UTC End of Day: ', endOfDayUTC.toISOString());
 
   try {
     const todaysAppointments = await Appointment.find({
       AppointmentDate: {
-        $gte: startOfDay,
-        $lt: endOfDay
+         $gte: startOfDay,
+         $lt: endOfDay
+       
       }
     });
     console.log('Today\'s Appointments:', todaysAppointments); // debug log

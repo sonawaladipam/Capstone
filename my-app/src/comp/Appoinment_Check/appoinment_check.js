@@ -51,6 +51,7 @@ import Header from '../header/header'; // Adjust path as necessary
 import Footer from '../Footer/footer'; // Adjust path as necessary
 import '../Appoinment_Check/appoinment_check.css'
 import axios from 'axios';
+import Layout from '../layout/layout';
 
 const AppointmentCheck = () => {
   // Sample data for demonstration
@@ -116,6 +117,7 @@ const AppointmentCheck = () => {
   return (
     <div>
       <Header />
+      <Layout/>
       <div className="container">
         <section>
           <h2>Today's Appointments</h2>
@@ -127,7 +129,8 @@ const AppointmentCheck = () => {
             ))} */}
             {todaysAppointments.slice(0, showTodayMore ? todaysAppointments.length : 2).map(appointment => (
               <li key={appointment._id}>
-                {new Date(appointment.AppointmentTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - {appointment.name}
+                {new Date(appointment.AppointmentTime).toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' })} -
+                {new Date(appointment.AppointmentTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}  - {appointment.name}
               </li>
             ))}
           </ul>
@@ -145,6 +148,7 @@ const AppointmentCheck = () => {
             ))} */}
             {upcomingAppointments.slice(0, showUpcomingMore ? upcomingAppointments.length : 2).map(appointment => (
               <li key={appointment._id}>
+                {new Date(appointment.AppointmentTime).toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' })} -
                 {new Date(appointment.AppointmentTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - {appointment.name}
               </li>
             ))}

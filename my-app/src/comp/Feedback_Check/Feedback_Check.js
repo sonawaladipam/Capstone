@@ -33,6 +33,7 @@ const FeedbackCheck = () => {
   return (
     <div className="feedback-container">
       <Header />
+      <div className="feedback-container2">
       {feedbackItems.map((feedback, index) => (
         <div key={feedback.id} className={`feedback-card ${!showAll && index > 0 ? 'hidden' : ''}`}>
           <blockquote className="feedback-quote">
@@ -50,6 +51,11 @@ const FeedbackCheck = () => {
       {!showAll && (
         <button className="see-more-button" onClick={handleSeeMore}>See More</button>
       )}
+
+
+      </div>
+      
+      
       <Footer />
     </div>
   );

@@ -1,21 +1,9 @@
 .footer {
-<<<<<<< Updated upstream
     background-color: #343a40;
     padding: 20px 0;
     text-align: center;
     border-top: 1px solid #e7e7e7;
     margin-top: auto;
-  
-=======
-    background-color: #f8f9fa;
-    /* padding: 20px 0; */
-    text-align: center;
-    border-top: 1px solid #e7e7e7;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
->>>>>>> Stashed changes
 }
 
 .footer .c1 {

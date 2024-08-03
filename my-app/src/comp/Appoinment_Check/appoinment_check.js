@@ -49,7 +49,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../header/header'; // Adjust path as necessary
 import Footer from '../Footer/footer'; // Adjust path as necessary
-import Layout from '../../comp/layout/layout'; // Adjust path as necessary
+//import Layout from '../../comp/layout/layout'; // Adjust path as necessary
 import '../Appoinment_Check/appoinment_check.css'
 import axios from 'axios';
 import Layout from '../layout/layout';
@@ -85,7 +85,8 @@ const AppointmentCheck = () => {
         const responseToday = await axios.get('http://localhost:3000/api/appointments/today');
         console.log('GUI Today\'s Appointments:', responseToday.data); // Debug log
         setTodaysAppointments(responseToday.data);
-        const responseUpcoming = await axios.get('http://localhost:3000/api/appointments');
+        //const responseUpcoming = await axios.get('http://localhost:3000/api/appointments');
+        const responseUpcoming = await axios.get('http://localhost:3000/api/appointments/future');
         console.log('GUI Upcoming Appointments:', responseUpcoming.data); // Debug log
         setUpcomingAppointments(responseUpcoming.data);
         //const allAppointments = response.data;
@@ -194,6 +195,7 @@ const AppointmentCheck = () => {
               <li key={appointment._id}>
                 <span className="time">
                   <FaClock className="icon" />
+                  {new Date(appointment.AppointmentTime).toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' })} - 
                   {new Date(appointment.AppointmentTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </span>
                 <span className="name">

@@ -7,7 +7,12 @@ const appointmentSchema = new mongoose.Schema({
   AppointmentTime: { type: Date, required: true },
   Status: { type: String, required: true },
   CustomerID: { type: Number, required: true },
-  name: { type: String, required: true } // Add this field for customer names
+  name: { type: String, required: true }, 
+  ReminderStatus: {type: Boolean, required: true},
+  ReminderPreference: {type: String, required: true},
+  Email: {type: String, required:true}
 });
 
-module.exports = mongoose.model('Appointment', appointmentSchema);
+const Appointment = mongoose.model('Appointment', appointmentSchema);
+
+module.exports = Appointment;

@@ -1,6 +1,17 @@
+// backend/routes/customers.js
 const express = require('express');
 const Customer = require('../models/customer');
 const router = express.Router();
+
+// Function to get the next CustomerID
+const getNextCustomerID = async () => {
+  const lastCustomer = await Customer.findOne().sort({ CustomerID: -1 });
+  if (lastCustomer) {
+    return lastCustomer.CustomerID + 1;
+  } else {
+    return 1; // If no customer exists, start with ID 1
+  }
+};
 
 // Route to add a new customer
 router.post('/', async (req, res) => {
@@ -12,7 +23,8 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ message: 'All fields are required' });
     }
 
-    const newCustomer = new Customer({ name, phone, address, email });
+    const nextCustomerID = await getNextCustomerID();
+    const newCustomer = new Customer({ CustomerID: nextCustomerID, name, phone, address, email });
     await newCustomer.save();
 
     res.status(201).json(newCustomer);
@@ -43,6 +55,5 @@ router.put('/:id', async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error', error: error.message });
   }
 });
-
 
 module.exports = router;

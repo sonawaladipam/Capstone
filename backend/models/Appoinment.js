@@ -1,3 +1,4 @@
+//backend/models/Appointment.js
 const mongoose = require('mongoose');
 
 const appointmentSchema = new mongoose.Schema({
@@ -5,10 +6,10 @@ const appointmentSchema = new mongoose.Schema({
   ServiceID: { type: Number, required: true },
   AppointmentDate: { type: Date, required: true },
   AppointmentTime: { type: Date, required: true },
-  Status: { type: String, required: true },
+  Status: { type: String, default: 'confirmed' }, // Set default value to 'confirmed'
   CustomerID: { type: Number, required: true },
   name: { type: String, required: true }, 
-  ReminderStatus: {type: Boolean, required: true},
+  ReminderStatus: {type: Boolean, default: false}, // Set default value to false
   ReminderPreference: {type: String, required: true},
   Email: {type: String, required:true}
 });

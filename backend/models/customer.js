@@ -1,6 +1,12 @@
+//backend/models/customer.js
+
 const mongoose = require('mongoose');
 
 const customerSchema = new mongoose.Schema({
+  CustomerID: { 
+    type: Number, 
+    required: true 
+  },
   name: {
     type: String,
     required: true,

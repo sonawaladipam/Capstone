@@ -1,0 +1,110 @@
+/* General styles */
+.c6 {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f0f2f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+section {
+    margin-left: 200px;
+}
+section.service-reminder{
+    margin-left: 200px;
+}
+.service-reminder h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+/* Table styles */
+.appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.appointment-table th, .appointment-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.appointment-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.appointment-row:hover {
+    background-color: #f1f1f1;
+}
+
+/* Appointment status */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    min-width: 80px;
+    color: #fff;
+}
+
+.status-badge.sent {
+    background-color: #28a745; /* Success green */
+}
+
+.status-badge.not-sent {
+    background-color: #dc3545; /* Danger red */
+}
+
+/* Buttons */
+.send-reminder-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.send-reminder-button.disabled {
+    background-color: #6c757d; /* Gray */
+    cursor: not-allowed;
+}
+
+.send-reminder-button:hover:not(.disabled) {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.see-more-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.see-more-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+

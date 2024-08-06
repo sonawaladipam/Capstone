@@ -1,4 +1,4 @@
-/* /* Ensure full height for HTML and body */
+/* Ensure full height for HTML and body */
 html, body {
   height: 100%;
   margin: 0;
@@ -7,22 +7,17 @@ html, body {
 
 /* Apply the base font and styles */
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100%;
   display: flex;
-  flex-direction: column; 
-  box-sizing: inherit;
+  flex-direction: column;
 }
 
 /* Code styling */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 /* Container for the entire application */
@@ -37,36 +32,4 @@ code {
   flex: 1;
 }
 
-/* Footer styling */
-.footer {
-  background-color: #343a40;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-}
 
-.footer .c1 {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.footer p {
-  margin: 0;
-  padding: 5px 0;
-}
-
-.footer a {
-  color: #007bff;
-  text-decoration: none;
-  margin: 0 5px;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-/* Ensure code blocks in various elements are styled */
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}

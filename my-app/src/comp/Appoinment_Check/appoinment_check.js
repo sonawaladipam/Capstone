@@ -95,7 +95,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../header/header'; // Adjust path as necessary
 import Footer from '../Footer/footer'; // Adjust path as necessary
-//import Layout from '../../comp/layout/layout'; // Adjust path as necessary
+import Layout from '../../comp/layout/layout'; // Adjust path as necessary
 import '../Appoinment_Check/appoinment_check.css'
 import axios from 'axios';
 import { FaClock, FaUser } from 'react-icons/fa';

@@ -105,7 +105,7 @@ const nodemailer = require('nodemailer');
 const http = require("http");
 const MongoClient = require('mongodb').MongoClient;
 const reminderRoutes = require('./routes/reminderRoutes');  
-
+const profileRouter = require('./routes/profile');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -150,7 +150,7 @@ app.use('/api/customers', customerRoutes);
 // app.use('/api/login', login);
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/reminders', reminderRoutes);
-
+app.use('/api/profile ', profileRouter);
 // app.post('/send-reminder', (req, res) => {
 //   console.log('Received request to send email:', req.body); // Add this line
 

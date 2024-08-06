@@ -204,7 +204,7 @@
 .add-customer-button:hover {
   background-color: #45a049;
 } */
-.customer-container {
+/* .customer-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -298,4 +298,119 @@
 
 .customer-form button:hover {
   background-color: #45a049;
+} */
+.customer-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  padding-bottom: 125px;
+}
+
+.customer-content {
+  flex: 1;
+}
+
+.customer-list {
+  width: 100%;
+  margin: auto;
+}
+
+.customer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.customer-table th, .customer-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.customer-table th {
+  background-color: #f2f2f2;
+}
+
+.add-customer-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.add-customer-button:hover,
+.add-customer-button:focus {
+  background-color: #45a049;
+  outline: none;
+}
+
+.search-bar {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.customer-form-container {
+  margin-top: 20px;
+}
+
+.customer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.customer-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-form label {
+  margin-bottom: 5px;
+}
+
+.customer-form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.customer-form button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.customer-form button:hover,
+.customer-form button:focus {
+  background-color: #45a049;
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .customer-container {
+    margin-left: 0;
+  }
+
+  .customer-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .customer-form button {
+    width: 100%;
+  }
 }

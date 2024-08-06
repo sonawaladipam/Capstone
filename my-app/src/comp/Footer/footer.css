@@ -1,4 +1,4 @@
-
+/* 
 /* 
 .footer {
     background-color: #343a40;
@@ -28,12 +28,93 @@
     text-decoration: underline;
 } */
  /* Footer background color */
-.footer {
+/*.footer {
     background-color: #343a40;
     color: white;
     padding: 20px 0;
     text-align: center;
     position: relative;
+}
+
+/* Container inside footer to center content */
+/*.footer .c1 {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Paragraph styling within the footer */
+/*.footer p {
+    margin: 0;
+    padding: 5px 0;
+   color: white;
+}
+
+/* Link styling within the footer */
+/*.footer a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* Link hover effect */
+/*.footer a:hover {
+    text-decoration: underline;
+} */
+/* Footer styling */
+/* .footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    /* Uncomment if necessary for specific layout requirements */
+/*    border-top: 1px solid #e7e7e7;
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    right: 0;
+    left:0;
+}
+
+/* Container inside footer to center content */
+/*.footer .c1 {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Paragraph styling within the footer */
+/*.footer p {
+    margin: 0;
+    padding: 5px 0;
+    color: white;
+   
+}
+
+/* Link styling within the footer */
+/*.footer a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* Link hover effect */
+/*.footer a:hover {
+    text-decoration: underline;
+} */
+/* Main content styling */
+
+/* Footer styling */
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 0;
+    text-align: center;
+    border-top: 1px solid #e7e7e7;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    
 }
 
 /* Container inside footer to center content */
@@ -46,7 +127,7 @@
 .footer p {
     margin: 0;
     padding: 5px 0;
-   color: white;
+    color: white;
 }
 
 /* Link styling within the footer */

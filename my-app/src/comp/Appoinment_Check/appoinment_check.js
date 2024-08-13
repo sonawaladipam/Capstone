@@ -28,7 +28,7 @@ const AppointmentCheck = () => {
     serviceID: '',
     appointmentDate: '',
     appointmentTime: '',
-    reminderPreference: ''
+    reminderPreference: 'Email'
   });
 
   useEffect(() => {
@@ -83,6 +83,12 @@ const AppointmentCheck = () => {
       const appointmentDateTime = new Date(`${appointmentDate}T${appointmentTime}`);
       if (appointmentDateTime.getMinutes() % 30 !== 0) {
         alert('Appointment time must be in 30-minute intervals');
+        return;
+      }
+
+      const now = new Date();
+      if (appointmentDateTime < now) {
+        alert('Appointment cannot be booked in the past');
         return;
       }
     
@@ -222,8 +228,10 @@ const AppointmentCheck = () => {
               </label>
               <label>
                 Reminder Preference:
-                <input type="text" name="reminderPreference" value={newAppointment.reminderPreference || ''} onChange={handleInputChange} required />
-              </label>
+                <select name="reminderPreference" value={newAppointment.reminderPreference || ''} onChange={handleInputChange} >
+                    <option value="email">Email</option>
+                </select>
+                </label>
               <div className="form-buttons">
                 <button type="submit">Save</button>
                 <button type="button" onClick={() => setShowForm(false)}>Cancel</button>

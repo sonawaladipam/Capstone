@@ -48,9 +48,6 @@ const Sidebar = () => {
             <Link to="/service_remainder" className="sidebar-link">
                 <FontAwesomeIcon icon={faBell} /> Reminder
             </Link>
-            <Link to="/profile" className="sidebar-link">
-                <FontAwesomeIcon icon={faUserCircle} /> Profile
-            </Link>
             <Link
                 to="#"
                 onClick={(e) => {

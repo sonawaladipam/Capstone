@@ -27,6 +27,7 @@ import Home from './comp/home/home';
 import CustomerDetails from './comp/Customer_Details/customer_details';
 import AppoinmentCheck from './comp/Appoinment_Check/appoinment_check';
 import ServiceRemainder from './comp/Service_Remainder/service_remainder';
+import ForgotPassword from './comp/Forgot_password/ForgotPassword';
 import Profile from './comp/profile/profile';
 import { Navigate } from 'react-router-dom';
 
@@ -63,6 +64,7 @@ function App() {
         />
         <Route path="/appoinment_check" element={<AppoinmentCheck />} />
         <Route path="/service_remainder" element={<ServiceRemainder />} />
+        <Route path="/forgot_password" element={<ForgotPassword />} />
       </Routes>
     </Router>
   );

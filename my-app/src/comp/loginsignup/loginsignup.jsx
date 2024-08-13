@@ -3,6 +3,7 @@ import './loginsignup.css';
 import user_icon from '../assets/user.png';
 import email_icon from '../assets/email.png';
 import pass_icon from '../assets/pass.png';
+import Modal from 'react-modal';
 
 const LoginSignup = () => {
   //const [action, setAction] = useState("Sign up");
@@ -14,6 +15,9 @@ const LoginSignup = () => {
     confirmPassword: ''
   });
   const [message, setMessage] = useState('');
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [resetEmail, setResetEmail] = useState('');
+  const [resetMessage, setResetMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -77,6 +81,32 @@ const LoginSignup = () => {
     }
   };
 
+  const handleResetPassword = async () => {
+    if (!resetEmail) {
+      setResetMessage('Please enter your email.');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3000/api/reset-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: resetEmail })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setResetMessage('Password reset link has been sent to your email.');
+      } else {
+        setResetMessage(`Error: ${data.error}`);
+      }
+    } catch (error) {
+      console.error('Error during fetch:', error);
+      setResetMessage('Error: Server error');
+    }
+  };
+
   return (
     <div className='container'>
       <div className="h1">
@@ -131,7 +161,7 @@ const LoginSignup = () => {
           )}
         </div>
         {action === "Login" && (
-          <div className="forget-pass">
+          <div className="forget-pass"onClick={() => setModalIsOpen(true)}>
             forget password? <span>click here</span>
           </div>
         )}
@@ -161,6 +191,29 @@ const LoginSignup = () => {
           </div>
         </div>
       </form>
+      {/* Modal for Forgot Password */}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        contentLabel="Forgot Password"
+        className="modal"
+        overlayClassName="modal-overlay"
+      >
+        <h2>Forgot Password</h2>
+        <button onClick={() => setModalIsOpen(false)}>Close</button>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={resetEmail}
+          onChange={(e) => setResetEmail(e.target.value)}
+        />
+        <button onClick={handleResetPassword}>Submit</button>
+        {resetMessage && (
+          <div className={resetMessage.includes('Error') ? 'error' : 'success'}>
+            {resetMessage}
+          </div>
+        )}
+      </Modal>
     </div>
   );
 };

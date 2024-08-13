@@ -160,6 +160,7 @@ button:hover {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   margin-left: 400px;
+  padding-bottom: 200px;
 }
 
 /* Section styling */
@@ -278,4 +279,10 @@ button:hover {
 
 .form-buttons button:last-of-type:hover {
   background-color: #c82333;
+}
+.add-appointment-button{
+  padding: 5px 10px; /* Adjusts the space inside the button */
+  font-size: 12px; /* Makes the text inside the button smaller */
+  width: auto; 
+  margin-bottom: 30px;
 }

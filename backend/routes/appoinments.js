@@ -46,9 +46,9 @@ router.get('/today', async (req, res) => {
   try {
     const todaysAppointments = await Appointment.find({
       AppointmentDate: {
-         $gte: startOfDay,
-         $lt: endOfDay
-       
+        $gte: startOfDay,
+        $lt: endOfDay
+
       }
     });
     console.log('Today\'s Appointments:', todaysAppointments); // debug log
@@ -93,6 +93,12 @@ router.post('/', async (req, res) => {
     // Combine AppointmentDate and AppointmentTime into a single Date object
     const appointmentDateTime = new Date(`${appointmentDate}T${appointmentTime}`);
 
+    // Check if the appointment is set in the past
+    const now = new Date();
+    if (appointmentDateTime < now) {
+      return res.status(400).json({ message: 'Appointment cannot be booked in the past' });
+    }
+
     // Check if there is any existing appointment at the same date and time
     const existingAppointment = await Appointment.findOne({ AppointmentDate: appointmentDateTime });
     if (existingAppointment) {
@@ -133,21 +139,21 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/future', async (req, res) => {
-    try {
-      const now = new Date();
-      console.log('Current Date and Time: ', now.toISOString());
-  
-      const futureAppointments = await Appointment.find({
-        AppointmentDate: {
-          $gt: now // Find appointments where the date is greater than now
-        }
-      });
-  
-      console.log('Future Appointments:', futureAppointments); // debug log
-      res.json(futureAppointments);
-    } catch (error) {
-      console.error('Error fetching future appointments:', error);
-      res.status(500).json({ message: error.message });
-    }
-  });
+  try {
+    const now = new Date();
+    console.log('Current Date and Time: ', now.toISOString());
+
+    const futureAppointments = await Appointment.find({
+      AppointmentDate: {
+        $gt: now // Find appointments where the date is greater than now
+      }
+    });
+
+    console.log('Future Appointments:', futureAppointments); // debug log
+    res.json(futureAppointments);
+  } catch (error) {
+    console.error('Error fetching future appointments:', error);
+    res.status(500).json({ message: error.message });
+  }
+});
 module.exports = router;
